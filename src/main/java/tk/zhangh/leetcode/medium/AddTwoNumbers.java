@@ -7,7 +7,7 @@ package tk.zhangh.leetcode.medium;
  */
 public class AddTwoNumbers {
 
-    public class ListNode {
+    private class ListNode {
         int val;
         ListNode next;
 
