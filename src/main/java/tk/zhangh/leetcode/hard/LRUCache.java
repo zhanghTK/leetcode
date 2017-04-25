@@ -71,7 +71,7 @@ public class LRUCache {
         map.remove(last.key);
     }
 
-    public class ListNode {
+    private class ListNode {
         ListNode prev;
         ListNode next;
         int val;
