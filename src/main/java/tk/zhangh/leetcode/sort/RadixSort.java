@@ -1,48 +1,35 @@
 package tk.zhangh.leetcode.sort;
 
-/**
- * 基数排序
+/** 基数排序
  * Created by ZhangHao on 2017/4/26.
  */
 public class RadixSort implements Sort {
     public static void main(String[] args) {
-        int i;
-        int a[] = {8, 2, 3, 4, 3, 6, 6, 3, 9};
-
-        System.out.printf("before sort:");
-        for (i = 0; i < a.length; i++)
-            System.out.printf("%d ", a[i]);
-        System.out.printf("\n");
-
-        new RadixSort().sort(a);
-
-        System.out.printf("after  sort:");
-        for (i = 0; i < a.length; i++)
-            System.out.printf("%d ", a[i]);
-        System.out.printf("\n");
+        new RadixSort().testSort();
     }
 
     @Override
-    public void sort(int[] nums) {
-        for (int exp = 1; getMax(nums) / exp > 0; exp *= 10) {
-            sort(nums, exp);
+    public void sort(int[] data) {
+        for (int exp = 1; getMax(data) / exp > 0; exp *= 10) {
+            radixSort(data, exp);
         }
     }
 
-    private void sort(int[] nums, int exp) {
-        int[] output = new int[nums.length];
+    private void radixSort(int[] nums, int exp) {
+        int[] helpArray = new int[nums.length];
         int[] buckets = new int[10];
         for (int num : nums) {
             buckets[(num / exp) % 10]++;
         }
+        // buckets[i]表示当前位值（如个/十/百...位数）小于等于i的共有多少位
         for (int i = 1; i < 10; i++) {
             buckets[i] += buckets[i - 1];
         }
         for (int i = nums.length - 1; i >= 0; i--) {
-            output[buckets[(nums[i] / exp) % 10] - 1] = nums[i];
+            helpArray[buckets[(nums[i] / exp) % 10] - 1] = nums[i];
             buckets[(nums[i] / exp) % 10]--;
         }
-        System.arraycopy(output, 0, nums, 0, nums.length);
+        System.arraycopy(helpArray, 0, nums, 0, nums.length);
     }
 
     private int getMax(int[] nums) {

@@ -6,36 +6,18 @@ package tk.zhangh.leetcode.sort;
  */
 public class ShellSort implements Sort {
     public static void main(String[] args) {
-        int i;
-        int a[] = {8, 2, 3, 4, 3, 6, 6, 3, 9};
-
-        System.out.printf("before sort:");
-        for (i = 0; i < a.length; i++)
-            System.out.printf("%d ", a[i]);
-        System.out.printf("\n");
-
-        new ShellSort().sort(a);
-
-        System.out.printf("after  sort:");
-        for (i = 0; i < a.length; i++)
-            System.out.printf("%d ", a[i]);
-        System.out.printf("\n");
+        new ShellSort().testSort();
     }
 
     @Override
-    public void sort(int[] nums) {
-        for (int increment = nums.length / 2; increment > 0; increment /= 2) {
-            for (int i = increment; i < nums.length; i++) {
-                int temp = nums[i];
-                int j;
-                for (j = i - increment; j >= 0; j -= increment) {
-                    if (temp < nums[j]) {
-                        nums[j + increment] = nums[j];
-                    } else {
-                        break;
-                    }
+    public void sort(int[] data) {
+        for (int step = data.length / 2; step > 0; step /= 2) {
+            for (int insertIndex = step; insertIndex < data.length; insertIndex++) {
+                for (int beforeInsertIndex = insertIndex - step;
+                     beforeInsertIndex >= 0 && data[beforeInsertIndex] > data[beforeInsertIndex + step];
+                     beforeInsertIndex -= step) {
+                    swap(data, beforeInsertIndex, beforeInsertIndex + step);
                 }
-                nums[j + increment] = temp;
             }
         }
     }

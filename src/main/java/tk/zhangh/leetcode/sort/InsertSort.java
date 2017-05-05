@@ -6,33 +6,16 @@ package tk.zhangh.leetcode.sort;
  */
 public class InsertSort implements Sort {
     public static void main(String[] args) {
-        int a[] = {8, 2, 3, 4, 3, 6, 6, 3, 9};
-
-        System.out.printf("before sort:");
-        printArray(a);
-        new InsertSort().sort(a);
-
-        System.out.printf("after  sort:");
-        printArray(a);
-    }
-
-    private static void printArray(int[] nums) {
-        for (int num : nums) System.out.printf("%d ", num);
-        System.out.printf("\n");
+        new InsertSort().testSort();
     }
 
     @Override
-    public void sort(int[] nums) {
-        for (int i = 1; i < nums.length; i++) {
-            int beforeInsertIndex;
-            int insertValue = nums[i];
-            for (beforeInsertIndex = i - 1; beforeInsertIndex >= 0; beforeInsertIndex--) {
-                if (nums[beforeInsertIndex] < nums[i])
-                    break;
-            }
-            if (beforeInsertIndex + 1 != i) {
-                System.arraycopy(nums, beforeInsertIndex + 1, nums, beforeInsertIndex + 1 + 1, i - 1 - beforeInsertIndex);
-                nums[beforeInsertIndex + 1] = insertValue;
+    public void sort(int[] data) {
+        for (int insertIndex = 1; insertIndex < data.length; insertIndex++) {
+            for (int beforeInsertIndex = insertIndex - 1;
+                 beforeInsertIndex >= 0 && data[beforeInsertIndex] > data[beforeInsertIndex + 1];
+                 beforeInsertIndex--) {
+                swap(data, beforeInsertIndex, beforeInsertIndex + 1);
             }
         }
     }

@@ -6,31 +6,15 @@ package tk.zhangh.leetcode.sort;
  */
 public class BubbleSort implements Sort {
     public static void main(String[] args) {
-        int a[] = {8, 2, 3, 4, 3, 6, 6, 3, 9};
-
-        System.out.printf("before sort:");
-        printArray(a);
-
-//        bucketSort(a, 10);
-        new BubbleSort().sort(a);
-
-        System.out.printf("after  sort:");
-        printArray(a);
-    }
-
-    private static void printArray(int[] nums) {
-        for (int num : nums) System.out.printf("%d ", num);
-        System.out.printf("\n");
+        new BucketSort().testSort();
     }
 
     @Override
-    public void sort(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] > nums[j]) {
-                    int tmp = nums[i];
-                    nums[i] = nums[j];
-                    nums[j] = tmp;
+    public void sort(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[i] > data[j]) {
+                    swap(data, i, j);
                 }
             }
         }
