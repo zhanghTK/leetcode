@@ -1,10 +1,10 @@
-package tk.zhangh.leetcode._1_50;
+package tk.zhangh.leetcode._51_100;
 
 /**
  * Jump Game
  * Created by ZhangHao on 2017/9/12.
  */
-public class _55_Solution {
+public class Solution55 {
     public boolean canJump(int[] nums) {
         int i = 0;
         for (int reach = 0;

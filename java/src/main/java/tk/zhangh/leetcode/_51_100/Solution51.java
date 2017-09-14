@@ -7,7 +7,7 @@ import java.util.List;
  * N-Queens
  * Created by ZhangHao on 2017/9/13.
  */
-public class _51_Solution {
+public class Solution51 {
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> results = new ArrayList<>();
         if (n <= 0) {

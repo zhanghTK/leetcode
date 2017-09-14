@@ -4,7 +4,7 @@ package tk.zhangh.leetcode._51_100;
  * N-Queens II
  * Created by ZhangHao on 2017/9/13.
  */
-public class _52_Solution {
+public class Solution52 {
     private static int sum;
 
     public int totalNQueens(int n) {

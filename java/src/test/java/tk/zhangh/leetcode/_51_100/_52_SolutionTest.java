@@ -8,7 +8,7 @@ import org.junit.Test;
 public class _52_SolutionTest {
     @Test
     public void totalNQueens() throws Exception {
-        System.out.println(new _52_Solution().totalNQueens(8));
+        System.out.println(new Solution52().totalNQueens(8));
     }
 
 }
