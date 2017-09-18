@@ -3,6 +3,7 @@ package tk.zhangh.leetcode._51_100;
 import java.util.Stack;
 
 /**
+ * Simplify Path
  * Created by ZhangHao on 2017/9/14.
  */
 public class Solution71 {
