@@ -1,5 +1,7 @@
 package tk.zhangh.leetcode._1_50;
 
+import tk.zhangh.leetcode.ListNode;
+
 import java.util.Arrays;
 import java.util.List;
 

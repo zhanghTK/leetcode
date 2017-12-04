@@ -1,6 +1,7 @@
 package tk.zhangh.leetcode._1_50;
 
 import org.junit.Test;
+import tk.zhangh.leetcode.ListNode;
 
 /**
  * Created by ZhangHao on 2017/9/4.

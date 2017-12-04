@@ -1,5 +1,7 @@
 package tk.zhangh.leetcode._1_50;
 
+import tk.zhangh.leetcode.ListNode;
+
 /**
  * Remove Nth Node From End of List
  * Created by ZhangHao on 2017/9/6.
